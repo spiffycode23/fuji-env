@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# place in /etc/cron.hourly
+
+method='cron'
+ip='0.0.0.0'
+remoteurl='localhost'
+
+/usr/bin/curl --data 'host=$HOSTNAME&method=${method}&ip=${ip}' \
+     ${remoteurl}/checkin/checkin.php
